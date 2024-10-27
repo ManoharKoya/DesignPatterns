@@ -10,15 +10,7 @@ public class ElevatorCallRequest {
         return floor;
     }
 
-    public void setFloor(Floor floor) {
-        this.floor = floor;
-    }
-
     public Direction getDirection() {
         return direction;
-    }
-
-    public void setDirection(Direction direction) {
-        this.direction = direction;
     }
 }

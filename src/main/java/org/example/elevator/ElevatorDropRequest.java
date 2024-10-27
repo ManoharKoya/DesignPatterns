@@ -7,8 +7,4 @@ public class ElevatorDropRequest {
     public Floor getFloor() {
         return floor;
     }
-
-    public void setFloor(Floor floor) {
-        this.floor = floor;
-    }
 }

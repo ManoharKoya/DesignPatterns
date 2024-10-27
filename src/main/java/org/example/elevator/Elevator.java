@@ -5,36 +5,20 @@ import java.util.Set;
 
 public class Elevator {
 
-    public Direction getMovingDirection() {
-        return movingDirection;
-    }
+    private State state;
+    private Floor presentFloor, callDestinationFloor;
+    private int topFloor;
+    // assuming this set is sorted increasing order based on the moving direction.
+    private Set<ElevatorDropRequest> dropRequests;
 
-    public void setMovingDirection(Direction movingDirection) {
-        this.movingDirection = movingDirection;
-    }
+
 
     public State getState() {
         return state;
     }
 
-    public void setState(State state) {
-        this.state = state;
-    }
-
-    public Floor getPresentFloor() {
-        return presentFloor;
-    }
-
-    public void setPresentFloor(Floor presentFloor) {
-        this.presentFloor = presentFloor;
-    }
-
     public Floor getCallDestinationFloor() {
         return callDestinationFloor;
-    }
-
-    public void setCallDestinationFloor(Floor callDestinationFloor) {
-        this.callDestinationFloor = callDestinationFloor;
     }
 
     private Direction movingDirection, requestDirection;
@@ -42,17 +26,6 @@ public class Elevator {
     public Direction getRequestDirection() {
         return requestDirection;
     }
-
-    public void setRequestDirection(Direction requestDirection) {
-        this.requestDirection = requestDirection;
-    }
-
-    private State state;
-    private Floor presentFloor, callDestinationFloor;
-    private int topFloor;
-    // assuming this set is sorted increasing order based on the moving direction.
-    private Set<ElevatorDropRequest> dropRequests;
-
     public Elevator(Floor presentFloor, int topFloor) {
         this.presentFloor = presentFloor;
         this.state = State.IDLE;
