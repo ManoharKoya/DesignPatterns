@@ -1,16 +1,16 @@
 package org.example.limit.order.book.linked.list;
 
-public class LinkedList<E> {
+public class LinkedQueueList<E> {
     public Node<E> head;
     public Node<E> tail;
 
-    public LinkedList(E data) {
+    public LinkedQueueList(E data) {
         Node<E> headNode = new Node(data);
         this.head = headNode;
         this.tail = headNode;
     }
 
-    public LinkedList() {
+    public LinkedQueueList() {
         this.head = null;
     }
 

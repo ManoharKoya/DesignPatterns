@@ -1,6 +1,6 @@
 package org.example.limit.order.book;
 
-import org.example.limit.order.book.linked.list.LinkedList;
+import org.example.limit.order.book.linked.list.LinkedQueueList;
 import org.example.limit.order.book.linked.list.Node;
 
 import java.util.HashMap;
@@ -8,11 +8,11 @@ import java.util.HashMap;
 public class PriceOrderQueue {
     double price;
     double totalVolume;
-    LinkedList<Order> orderQueue;
+    LinkedQueueList<Order> orderQueue;
     HashMap<String, Node<Order>> orderAddressMap;
 
     PriceOrderQueue() {
-        this.orderQueue = new LinkedList<>();
+        this.orderQueue = new LinkedQueueList<>();
         this.totalVolume = 0; this.price = 0;
         this.orderAddressMap = new HashMap<>();
     }
