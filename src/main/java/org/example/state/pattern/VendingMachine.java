@@ -28,6 +28,7 @@ public class VendingMachine {
     }
 
     public boolean isItemAvailable(int aisleNumber) {
+        return true;
     }
 
     public void setCoins(double coins) {
