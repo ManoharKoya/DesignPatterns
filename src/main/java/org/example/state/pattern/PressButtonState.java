@@ -18,6 +18,7 @@ public class PressButtonState implements State{
         if(aisleNumber < 0 || aisleNumber > vendingMachine.getNumberAisles())
             throw new Exception("Invalid Aisle Number");
         vendingMachine.setRequestAisleNumber(aisleNumber);
+        vendingMachine.setState(StateEnum.DISBURSE_ITEM);
     }
 
     @Override

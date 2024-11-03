@@ -13,7 +13,7 @@ public class CoinInsertedState implements State{
     @Override
     public void insertCoin(double coins) {
         vendingMachine.setCoins(coins);
-        vendingMachine.setState(StateEnum.DISBURSE_ITEM);
+        vendingMachine.setState(StateEnum.PRESS_BUTTON);
     }
 
     @Override

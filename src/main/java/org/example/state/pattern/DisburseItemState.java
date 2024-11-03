@@ -21,9 +21,10 @@ public class DisburseItemState implements State{
     @Override
     public void disburseItem(int aisleNumber) throws Exception {
         if(vendingMachine.isItemAvailable(aisleNumber)) {
-            vendingMachine.disburseItem(aisleNumber);
+            vendingMachine.getItem(aisleNumber);
         } else {
             throw new Exception("Item unavailable: can not disburse item");
         }
+        vendingMachine.setState(StateEnum.INSERT_COIN);
     }
 }

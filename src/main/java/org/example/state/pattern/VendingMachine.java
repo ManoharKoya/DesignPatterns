@@ -1,6 +1,6 @@
 package org.example.state.pattern;
 
-public class VendingMachine {
+public class VendingMachine implements State{
 
     int numberOfAisles;
 
@@ -16,6 +16,8 @@ public class VendingMachine {
         currentState = coinInsertState;
     }
 
+
+
     public int getNumberAisles() {
         return this.numberOfAisles;
     }
@@ -24,7 +26,19 @@ public class VendingMachine {
         this.requestAisleNumber = requestAisleNumber;
     }
 
-    public void disburseItem(int aisleNumber) {
+    @Override
+    public void insertCoin(double coins) throws Exception {
+        this.currentState.insertCoin(coins);
+    }
+
+    @Override
+    public void pressButton(int aisleNumber) throws Exception {
+        this.currentState.pressButton(aisleNumber);
+    }
+
+    @Override
+    public void disburseItem(int aisleNumber) throws Exception {
+        this.currentState.disburseItem(aisleNumber);
     }
 
     public boolean isItemAvailable(int aisleNumber) {
@@ -41,5 +55,9 @@ public class VendingMachine {
             case PRESS_BUTTON -> this.currentState = pressButtonState;
             case DISBURSE_ITEM -> this.currentState = disbursementState;
         }
+    }
+
+    public void getItem(int aisleNumber) {
+        System.out.printf("Getting item from aisle: %d", aisleNumber);
     }
 }
