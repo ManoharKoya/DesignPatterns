@@ -1,7 +1,7 @@
 package org.example.decorator.pattern.logger;
 
-public class ConsoleOutputLogger extends FilterLogOutput{
-    ConsoleOutputLogger(Logger logger) {
+public class ConsoleOutputLoggerDecorator extends FilterLogOutputDecorator {
+    ConsoleOutputLoggerDecorator(Logger logger) {
         this.logger = logger;
     }
     public void log(String logMessage) {
